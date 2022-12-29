@@ -1,4 +1,6 @@
-# Windows Web01 Server
+#########################################################################################
+# Virtual Machine Webserver01                                                           #
+#########################################################################################
 resource "azurerm_network_interface" "vm-nic1" {
   name                = var.vm-nic1
   location            = azurerm_resource_group.rgname2.location
@@ -32,7 +34,9 @@ resource "azurerm_windows_virtual_machine" "vm-webname1" {
     version   = "latest"
   }
 }
-# Windows Web02 Server
+#########################################################################################
+# Virtual Machine Webserver02                                                           #
+#########################################################################################
 resource "azurerm_network_interface" "vm-nic2" {
   name                = var.vm-nic2
   location            = azurerm_resource_group.rgname2.location

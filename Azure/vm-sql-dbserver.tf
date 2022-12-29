@@ -1,4 +1,6 @@
-# Windows DB Server01
+#########################################################################################
+# Virtual Machine Database SQL                                                          #
+#########################################################################################
 resource "azurerm_network_interface" "vm-nic3" {
   name                = var.vm-nic3
   location            = azurerm_resource_group.rgname3.location

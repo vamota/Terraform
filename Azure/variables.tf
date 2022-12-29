@@ -1,4 +1,6 @@
-# Resource Groups Variables
+#########################################################################################
+# Resource Groups                                                                       #
+#########################################################################################
 variable "rgname1" {
   type    = string
   default = "network-rg"
@@ -15,7 +17,9 @@ variable "rgname4" {
   type    = string
   default = "terraform-rg"
 }
-# Virtual Network Variables
+#########################################################################################
+# Virtual Network Variables                                                             #
+#########################################################################################
 variable "vnetname" {
   type    = string
   default = "hub-vnet"
@@ -60,7 +64,11 @@ variable "vngpipname" {
   type    = string
   default = "vngw-pip"
 }
-# Network Security Group Variables
+
+#########################################################################################
+# Network Security Group Variables                                                      #
+#########################################################################################
+
 variable "nsg-websubnet" {
   type    = string
   default = "nsg-websubnet"
@@ -69,12 +77,13 @@ variable "nsg-dbsubnet" {
   type    = string
   default = "nsg-dbsubnet"
 }
-# Storage Variables
+#########################################################################################
+# Storage Variables                                                                     #
+#########################################################################################
 variable "stgname1" {
   type    = string
   default = "tfstoragelog"
 }
-# Storage Variables
 variable "stgname2" {
   type    = string
   default = "netstoragelog"
@@ -83,7 +92,9 @@ variable "stgcont" {
   type    = string
   default = "stgcontlog"
 }
-# Virtual Machines Variables
+#########################################################################################
+# Virtual Machines Variables                                                            #
+#########################################################################################
 variable "vm-webname1" {
   type    = string
   default = "vm-webapp01"

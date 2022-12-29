@@ -1,3 +1,6 @@
+#########################################################################################
+# Storage Accounts                                                                      #
+#########################################################################################
 resource "azurerm_storage_account" "stgname1" {
   name                     = var.stgname1
   resource_group_name      = azurerm_resource_group.rgname4.name
