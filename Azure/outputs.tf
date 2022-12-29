@@ -45,17 +45,26 @@ output "vm-webname2" {
 output "vm-dbname1" {
   value = azurerm_windows_virtual_machine.vm-dbname1.id
 }
-
+output "vm-dcname1" {
+  value = azurerm_windows_virtual_machine.vm-dcname1.id
+}
+output "vm-dcname2" {
+  value = azurerm_windows_virtual_machine.vvm-dcname2.id
+}
 output "vm-nic1" {
   value = azurerm_network_interface.vm-nic1.id
 }
-
 output "vm-nic2" {
   value = azurerm_network_interface.vm-nic2.id
 }
-
 output "vm-nic3" {
   value = azurerm_network_interface.vm-nic3.id
+}
+output "vm-nic4" {
+  value = azurerm_network_interface.vm-nic4.id
+}
+output "vm-nic5" {
+  value = azurerm_network_interface.vm-nic5
 }
 
 output "vngwname" {
@@ -73,4 +82,7 @@ output "spokename1" {
 }
 output "spokename2" {
   value = azurerm_virtual_network.spokename2.id
+}
+output "dcssubnet" {
+  value = azurerm_subnet.dcssubnet.id
 }

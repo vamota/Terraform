@@ -17,6 +17,10 @@ variable "rgname4" {
   type    = string
   default = "terraform-rg"
 }
+variable "rgname5" {
+  type    = string
+  default = "addcs-rg"
+}
 #########################################################################################
 # Virtual Network Variables                                                             #
 #########################################################################################
@@ -59,6 +63,10 @@ variable "prodspokesubnet" {
 variable "bastionsubnet" {
   type    = string
   default = "AzureBastionSubnet"
+}
+variable "dcssubnet" {
+  type    = string
+  default = "adds-subnet"
 }
 variable "vngpipname" {
   type    = string
@@ -107,6 +115,14 @@ variable "vm-dbname1" {
   type    = string
   default = "vm-db01"
 }
+variable "vm-dcname1" {
+  type    = string
+  default = "vm-dc01"
+}
+variable "vm-dcname2" {
+  type    = string
+  default = "vm-dc02"
+}
 # Network Interface Variables
 variable "vm-nic1" {
   type    = string
@@ -119,5 +135,13 @@ variable "vm-nic2" {
 variable "vm-nic3" {
   type    = string
   default = "vm-webdbname1-nic"
+}
+variable "vm-nic4" {
+  type    = string
+  default = "vm-dc01-nic"
+}
+variable "vm-nic5" {
+  type    = string
+  default = "vm-dc02-nic"
 }
 # tags

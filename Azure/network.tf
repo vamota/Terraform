@@ -20,6 +20,12 @@ resource "azurerm_subnet" "bastionsubnet" {
   virtual_network_name = azurerm_virtual_network.vnetname.name
   address_prefixes     = ["10.0.1.0/26"]
 }
+resource "azurerm_subnet" "dcssubnet" {
+  name                 = var.dcssubnet
+  resource_group_name  = azurerm_resource_group.rgname1.name
+  virtual_network_name = azurerm_virtual_network.vnetname.name
+  address_prefixes     = ["10.0.2.0/27"]
+}
 #########################################################################################
 # Azure Virtal Network Spokes and Peering                                               #
 ######################################################################################### 
