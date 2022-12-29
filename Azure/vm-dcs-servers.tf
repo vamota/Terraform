@@ -16,7 +16,7 @@ resource "azurerm_windows_virtual_machine" "vm-dcname1" {
   name                = var.vm-dcname1
   resource_group_name = azurerm_resource_group.rgname2.name
   location            = azurerm_resource_group.rgname2.location
-  size                = "Standard_D2s_v3"
+  size                = "Standard_B2s"
   admin_username      = "demouser"
   admin_password      = "demo@pass123"
   network_interface_ids = [
@@ -52,7 +52,7 @@ resource "azurerm_windows_virtual_machine" "vm-dcname2" {
   name                = var.vm-dcname2
   resource_group_name = azurerm_resource_group.rgname5.name
   location            = azurerm_resource_group.rgname5.location
-  size                = "Standard_D2s_v3"
+  size                = "Standard_B2s"
   admin_username      = "demouser"
   admin_password      = "demo@pass123"
   network_interface_ids = [
