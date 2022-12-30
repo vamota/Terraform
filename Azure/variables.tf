@@ -65,12 +65,12 @@ variable "vngpipname" {
   default = "vngw-pip"
 }
 variable "peering1" {
-   type    = string
-   default = "dev-spoke-to-vnethub"
- }
- variable "peering2" {
-   type    = string
-   default = "prod-spoke-to-vnethub"
+  type    = string
+  default = "dev-spoke-to-vnethub"
+}
+variable "peering2" {
+  type    = string
+  default = "prod-spoke-to-vnethub"
 }
 
 #########################################################################################

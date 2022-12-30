@@ -29,10 +29,10 @@ output "spokename2" {
   value = azurerm_virtual_network.spokename2.id
 }
 output "devspokesubnet" {
-   value = azurerm_subnet.devspokesubnet.id
+  value = azurerm_subnet.devspokesubnet.id
 }
 output "prodspokesubnet" {
-   value = azurerm_subnet.prodspokesubnet.id
+  value = azurerm_subnet.prodspokesubnet.id
 }
 output "dcssubnet" {
   value = azurerm_subnet.dcssubnet.id
