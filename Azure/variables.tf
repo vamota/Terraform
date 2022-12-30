@@ -72,7 +72,6 @@ variable "peering2" {
   type    = string
   default = "prod-spoke-to-vnethub"
 }
-
 #########################################################################################
 # Network Security Group Variables                                                      #
 #########################################################################################
@@ -111,7 +110,6 @@ variable "vm-nic1" {
   type    = string
   default = "vm-webapp01-nic"
 }
-
 variable "vm-webname2" {
   type    = string
   default = "vm-webapp02"

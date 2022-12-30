@@ -1,7 +1,6 @@
 #########################################################################################
 # Azure Virtal Network and Subnets                                                      #
 ######################################################################################### 
-
 resource "azurerm_virtual_network" "vnetname" {
   name                = var.vnetname
   location            = azurerm_resource_group.rgname1.location
@@ -29,7 +28,6 @@ resource "azurerm_subnet" "dcssubnet" {
 #########################################################################################
 # Azure Virtal Network Spokes and Peering                                               #
 ######################################################################################### 
-
 resource "azurerm_virtual_network" "spokename1" {
   name                = var.spokename1
   location            = azurerm_resource_group.rgname1.location
@@ -67,11 +65,9 @@ resource "azurerm_virtual_network_peering" "spokename2" {
   virtual_network_name      = azurerm_virtual_network.vnetname.name
   remote_virtual_network_id = azurerm_virtual_network.spokename2.id
 }
-
 #########################################################################################
 # Azure Virtual Network Gateway                                                         #
 ######################################################################################### 
-
 resource "azurerm_public_ip" "vngpipname" {
   name                = var.vngpipname
   location            = azurerm_resource_group.rgname1.location

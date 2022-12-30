@@ -28,7 +28,6 @@ resource "azurerm_resource_group" "rgname1" {
     env    = "dev"
   }
 }
-
 resource "azurerm_resource_group" "rgname2" {
   name     = var.rgname2
   location = "eastus2"
@@ -45,8 +44,6 @@ resource "azurerm_resource_group" "rgname3" {
     env    = "dev"
   }
 }
-
-
 resource "azurerm_resource_group" "rgname4" {
   name     = var.rgname4
   location = "eastus2"
@@ -55,7 +52,6 @@ resource "azurerm_resource_group" "rgname4" {
     env    = "dev"
   }
 }
-
 resource "azurerm_resource_group" "rgname5" {
   name     = var.rgname5
   location = "eastus2"

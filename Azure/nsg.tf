@@ -1,7 +1,6 @@
 ################################################################################
 # Network Security Group                                                       #
 ################################################################################
-
 # resource "azurerm_network_security_group" "nsg-websubnet" {
 #   name                = var.nsg-websubnet
 #   location            = azurerm_resource_group.rgname.location
