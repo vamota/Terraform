@@ -107,41 +107,40 @@ variable "vm-webname1" {
   type    = string
   default = "vm-webapp01"
 }
-variable "vm-webname2" {
-  type    = string
-  default = "vm-webapp02"
-}
-variable "vm-dbname1" {
-  type    = string
-  default = "vm-db01"
-}
-variable "vm-dcname1" {
-  type    = string
-  default = "vm-dc01"
-}
-variable "vm-dcname2" {
-  type    = string
-  default = "vm-dc02"
-}
-# Network Interface Variables
 variable "vm-nic1" {
   type    = string
   default = "vm-webapp01-nic"
+}
+
+variable "vm-webname2" {
+  type    = string
+  default = "vm-webapp02"
 }
 variable "vm-nic2" {
   type    = string
   default = "vm-webapp02-nic"
 }
+variable "vm-dbname1" {
+  type    = string
+  default = "vm-db01"
+}
 variable "vm-nic3" {
   type    = string
   default = "vm-webdbname1-nic"
+}
+variable "vm-dcname1" {
+  type    = string
+  default = "vm-dc01"
 }
 variable "vm-nic4" {
   type    = string
   default = "vm-dc01-nic"
 }
+variable "vm-dcname2" {
+  type    = string
+  default = "vm-dc02"
+}
 variable "vm-nic5" {
   type    = string
   default = "vm-dc02-nic"
 }
-# tags
