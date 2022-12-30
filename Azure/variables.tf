@@ -44,14 +44,6 @@ variable "gwsubnet" {
   type    = string
   default = "GatewaySubnet"
 }
-variable "websubnetname" {
-  type    = string
-  default = "web-facing-subnet"
-}
-variable "dbsubnetname" {
-  type    = string
-  default = "data-tier-subnet"
-}
 variable "devspokesubnet" {
   type    = string
   default = "dev-subnet"
@@ -71,6 +63,14 @@ variable "dcssubnet" {
 variable "vngpipname" {
   type    = string
   default = "vngw-pip"
+}
+variable "peering1" {
+   type    = string
+   default = "dev-spoke-to-vnethub"
+ }
+ variable "peering2" {
+   type    = string
+   default = "prod-spoke-to-vnethub"
 }
 
 #########################################################################################

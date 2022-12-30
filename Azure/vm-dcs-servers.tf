@@ -8,7 +8,7 @@ resource "azurerm_network_interface" "vm-nic4" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.websubnetname.id
+    subnet_id                     = azurerm_subnet.dcssubnet.id
     private_ip_address_allocation = "Dynamic"
   }
 }

@@ -18,5 +18,5 @@ resource "azurerm_storage_account" "stgname2" {
 
 resource "azurerm_storage_container" "stgcont" {
   name                 = "tfcontainer"
-  storage_account_name = azurerm_storage_account.stgname.name
+  storage_account_name = azurerm_storage_account.stgname1.name
 }

@@ -20,17 +20,8 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
-resource "azurerm_resource_group" "rgname4" {
-  name     = var.rgname4
-  location = "eastus2"
-  tags = {
-    method = "iac-terraform"
-    env    = "dev"
-  }
-}
-resource "azurerm_resource_group" "rgname3" {
-  name     = var.rgname3
+resource "azurerm_resource_group" "rgname1" {
+  name     = var.rgname1
   location = "eastus2"
   tags = {
     method = "iac-terraform"
@@ -46,11 +37,31 @@ resource "azurerm_resource_group" "rgname2" {
     env    = "dev"
   }
 }
-resource "azurerm_resource_group" "rgname1" {
-  name     = var.rgname1
+resource "azurerm_resource_group" "rgname3" {
+  name     = var.rgname3
   location = "eastus2"
   tags = {
     method = "iac-terraform"
     env    = "dev"
   }
 }
+
+
+resource "azurerm_resource_group" "rgname4" {
+  name     = var.rgname4
+  location = "eastus2"
+  tags = {
+    method = "iac-terraform"
+    env    = "dev"
+  }
+}
+
+resource "azurerm_resource_group" "rgname5" {
+  name     = var.rgname5
+  location = "eastus2"
+  tags = {
+    method = "iac-terraform"
+    env    = "dev"
+  }
+}
+
