@@ -28,3 +28,10 @@ resource "azurerm_resource_group" "rg" {
     env  = "labs"
   }
 }
+resource "azurerm_storage_account" "stg" {
+  name                     = var.stg
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  account_replication_type = "LRS"
+  account_tier             = "Standard"
+}
