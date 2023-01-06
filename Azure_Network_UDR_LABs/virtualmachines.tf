@@ -12,26 +12,34 @@ resource "azurerm_network_interface" "vm1-nic" {
     private_ip_address_allocation = "Dynamic"
   }
 }
-resource "azurerm_linux_virtual_machine" "vm1" {
-  name                = var.vm1
+resource "azurerm_virtual_machine" "vm1" {
+  name = var.vm1
   resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  size                = "Standard_B2s"
-  admin_username      = "demouser"
-  admin_password      = "demo@pass123"
+  location = azurerm_resource_group.rg.location
+  vm_size = "Standard_B2s"
   network_interface_ids = [
-    azurerm_network_interface.vm1-nic.id,
+    azurerm_network_interface.vm1-nic.id
   ]
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-  }
-
-  source_image_reference {
+  storage_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
-    version   = "latest"
+    offer = "0001-com-ubuntu-server-focal"
+    sku = "20_04-lts-gen2"
+    version = "latest"
+  }
+  storage_os_disk {
+    name = "vm1-osdisk"
+    caching = "ReadWrite"
+    create_option = "fromImage"
+    managed_disk_type = "Standard_LRS"
+    disk_size_gb = "30"
+  }
+  os_profile {
+    computer_name = var.vm1
+    admin_username = "ssoadmin"
+    admin_password = "demo@pass123"
+  }
+  os_profile_linux_config {
+    disable_password_authentication = false
   }
 }
 ##################################################################################
