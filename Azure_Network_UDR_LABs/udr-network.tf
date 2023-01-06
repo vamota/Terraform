@@ -28,3 +28,14 @@ resource "azurerm_route" "rt2" {
   next_hop_type          = "VirtualAppliance"
   next_hop_in_ip_address = "10.10.1.36"
 }
+################################################################################
+# Associate Route Table                                                        #
+################################################################################
+resource "azurerm_subnet_route_table_association" "asrt1" {
+  subnet_id      = azurerm_subnet.subnet3.id
+  route_table_id = azurerm_route_table.rtb1.id
+}
+resource "azurerm_subnet_route_table_association" "asrt2" {
+  subnet_id      = azurerm_subnet.subnet4.id
+  route_table_id = azurerm_route_table.rtb2.id
+}

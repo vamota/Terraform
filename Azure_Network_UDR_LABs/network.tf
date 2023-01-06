@@ -24,6 +24,7 @@ resource "azurerm_subnet" "subnet3" {
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnetname.name
   address_prefixes     = ["10.10.1.64/27"]
+
 }
 resource "azurerm_subnet" "subnet4" {
   name                 = var.subnet4
