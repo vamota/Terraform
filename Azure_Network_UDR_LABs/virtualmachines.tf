@@ -13,28 +13,28 @@ resource "azurerm_network_interface" "vm1-nic" {
   }
 }
 resource "azurerm_virtual_machine" "vm1" {
-  name = var.vm1
+  name                = var.vm1
   resource_group_name = azurerm_resource_group.rg.name
-  location = azurerm_resource_group.rg.location
-  vm_size = "Standard_B2s"
+  location            = azurerm_resource_group.rg.location
+  vm_size             = "Standard_B2s"
   network_interface_ids = [
     azurerm_network_interface.vm1-nic.id
   ]
   storage_image_reference {
     publisher = "Canonical"
-    offer = "0001-com-ubuntu-server-focal"
-    sku = "20_04-lts-gen2"
-    version = "latest"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts-gen2"
+    version   = "latest"
   }
   storage_os_disk {
-    name = "vm1-osdisk"
-    caching = "ReadWrite"
-    create_option = "fromImage"
+    name              = "vm1-osdisk"
+    caching           = "ReadWrite"
+    create_option     = "fromImage"
     managed_disk_type = "Standard_LRS"
-    disk_size_gb = "30"
+    disk_size_gb      = "30"
   }
   os_profile {
-    computer_name = var.vm1
+    computer_name  = var.vm1
     admin_username = "ssoadmin"
     admin_password = "demo@pass123"
   }

@@ -21,7 +21,7 @@ provider "azurerm" {
   features {}
 }
 resource "azurerm_resource_group" "rg" {
-  name     = "vamota-rg"
+  name     = var.rg
   location = "eastus2"
   tags = {
     labs = "network"
