@@ -38,20 +38,3 @@ resource "azurerm_subnet" "subnet5" {
   virtual_network_name = azurerm_virtual_network.vnetname.name
   address_prefixes     = ["10.10.1.128/27"]
 }
-
-#########################################################################################
-# Azure Bastion Network and Subnets                                                     #
-#########################################################################################
-
-resource "azurerm_public_ip" "pip" {
-  name = "bastion-pip"
-  allocation_method = "Static"
-  sku = "Standard"
-}
-
-resource "azurerm_bastion_host" "name" {
-  name = "bastionlabs"
-  location = azurerm_resource_group.rg.location
-  scale_units = ""
-  sku = 
-}
