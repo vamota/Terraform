@@ -12,9 +12,17 @@ variable "dbsubnet" {
 }
 variable "vm-nic1" {
   type    = string
-  default = "vmdb-nic1"
+  default = "vmdb1-nic1"
 }
-variable "vmdbname" {
+variable "vm-nic2" {
+  type    = string
+  default = "vmdb2-nic2"
+}
+variable "vmdbname1" {
   type    = string
   default = "vmdb1"
+}
+variable "vmdbname2" {
+  type    = string
+  default = "vmdb2"
 }
