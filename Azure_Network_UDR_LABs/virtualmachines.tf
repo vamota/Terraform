@@ -30,7 +30,7 @@ resource "azurerm_virtual_machine" "vm1" {
   vm_size             = "Standard_B2s"
   network_interface_ids = [
     azurerm_network_interface.vm1-nic.id,
-    azurerm_network_interface.vm2-nic.id
+    azurerm_network_interface.vm2-nic.id 
   ]
   storage_image_reference {
     publisher = "Canonical"

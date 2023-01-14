@@ -3,7 +3,7 @@
 #######################################################################################
 variable "rg" {
   type    = string
-  default = "network-rg"
+  default = "network-udr-labs-rg"
 }
 variable "stg" {
   type    = string
