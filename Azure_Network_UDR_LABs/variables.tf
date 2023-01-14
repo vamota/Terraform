@@ -41,15 +41,19 @@ variable "subnet5" {
 #########################################################################################
 variable "vm1-nic" {
   type    = string
-  default = "vm1-nva-nic"
+  default = "vm1-nva-nic1"
 }
 variable "vm2-nic" {
   type    = string
-  default = "vm2-nic"
+  default = "vm1-nva-nic2"
 }
 variable "vm3-nic" {
   type    = string
   default = "vm3-nic"
+}
+variable "vm4-nic" {
+  type    = string
+  default = "vm4-nic"
 }
 variable "vm1" {
   type    = string
@@ -62,4 +66,8 @@ variable "vm2" {
 variable "vm3" {
   type    = string
   default = "vm3"
+}
+variable "vm4" {
+  type    = string
+  default = "vm4"
 }

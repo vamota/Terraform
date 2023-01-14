@@ -12,13 +12,25 @@ resource "azurerm_network_interface" "vm1-nic" {
     private_ip_address_allocation = "Dynamic"
   }
 }
+resource "azurerm_network_interface" "vm2-nic" {
+  name                = var.vm2-nic
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.subnet1.id
+    private_ip_address_allocation = "Dynamic"
+  }
+}
 resource "azurerm_virtual_machine" "vm1" {
   name                = var.vm1
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   vm_size             = "Standard_B2s"
   network_interface_ids = [
-    azurerm_network_interface.vm1-nic.id
+    azurerm_network_interface.vm1-nic.id,
+    azurerm_network_interface.vm2-nic.id
   ]
   storage_image_reference {
     publisher = "Canonical"
@@ -45,8 +57,8 @@ resource "azurerm_virtual_machine" "vm1" {
 ##################################################################################
 # Virtual Machine Windows                                                        #
 ##################################################################################
-resource "azurerm_network_interface" "vm2-nic" {
-  name                = var.vm2-nic
+resource "azurerm_network_interface" "vm3-nic" {
+  name                = var.vm3-nic
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -57,7 +69,7 @@ resource "azurerm_network_interface" "vm2-nic" {
   }
 }
 
-resource "azurerm_windows_virtual_machine" "vm2" {
+resource "azurerm_windows_virtual_machine" "vm3" {
   name                = var.vm2
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
@@ -65,7 +77,7 @@ resource "azurerm_windows_virtual_machine" "vm2" {
   admin_username      = "demouser"
   admin_password      = "demo@pass123"
   network_interface_ids = [
-    azurerm_network_interface.vm2-nic.id,
+    azurerm_network_interface.vm3-nic.id,
   ]
   os_disk {
     caching              = "ReadWrite"
@@ -82,8 +94,8 @@ resource "azurerm_windows_virtual_machine" "vm2" {
 ##################################################################################
 # Virtual Machine Windows                                                        #
 ##################################################################################
-resource "azurerm_network_interface" "vm3-nic" {
-  name                = var.vm3-nic
+resource "azurerm_network_interface" "vm4-nic" {
+  name                = var.vm4-nic
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -94,15 +106,15 @@ resource "azurerm_network_interface" "vm3-nic" {
   }
 }
 
-resource "azurerm_windows_virtual_machine" "vm3" {
-  name                = var.vm3
+resource "azurerm_windows_virtual_machine" "vm4" {
+  name                = var.vm4
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = "Standard_B2s"
   admin_username      = "demouser"
   admin_password      = "demo@pass123"
   network_interface_ids = [
-    azurerm_network_interface.vm3-nic.id,
+    azurerm_network_interface.vm4-nic.id,
   ]
   os_disk {
     caching              = "ReadWrite"
